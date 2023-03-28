@@ -1,4 +1,4 @@
-![progress-banner](https://codecrafters.io/landing/images/default_progress_banners/docker.png)
+[![progress-banner](https://app.codecrafters.io/progress/docker/d3c0d9c7-c980-420b-81e5-2fd68888737f)](https://app.codecrafters.io/users/Murrayw123)
 
 This is a starting point for Go solutions to the
 ["Build Your Own Docker" Challenge](https://codecrafters.io/challenges/docker).
