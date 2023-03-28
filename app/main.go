@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strings"
 	// Uncomment this block to pass the first stage!
 	// "os"
 	// "os/exec"
@@ -15,11 +16,12 @@ func main() {
 	args := os.Args[4:len(os.Args)]
 
 	cmd := exec.Command(command, args...)
-	output, err := cmd.Output()
+	output, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Printf("Err: %v", err)
 		os.Exit(1)
 	}
 
-	fmt.Println(string(output))
+	stripped := strings.ReplaceAll(string(output), "\n", "")
+	fmt.Println(stripped)
 }
