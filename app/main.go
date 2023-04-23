@@ -19,7 +19,6 @@ func main() {
 	err = os.MkdirAll(chrootDir+"/usr/local/bin", 0755)
 	err = os.MkdirAll(chrootDir+"/dev/null", 0755)
 	err = exec.Command("cp", "/usr/local/bin/docker-explorer", chrootDir+"/usr/local/bin").Run()
-	//err = exec.Command("cp", "/usr/bin/ls", chrootDir+"/usr/local/bin").Run()
 
 	command := os.Args[3]
 	args := os.Args[4:len(os.Args)]
@@ -34,14 +33,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("Command:", command)
-	fmt.Println("Args:", args)
-
 	cmd := exec.Command(command, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-
-	fmt.Println(cmd.Args)
 
 	err = cmd.Run()
 
