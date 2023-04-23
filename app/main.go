@@ -10,9 +10,9 @@ import (
 func main() {
 	chrootDir := "chroot"
 
-	err := os.Mkdir(chrootDir, 0755)
+	err := os.MkdirAll(chrootDir, 0755)
 	if err != nil {
-		fmt.Println("Err: %v", err)
+		fmt.Println("Err:", err)
 		os.Exit(1)
 	}
 
@@ -50,6 +50,6 @@ func main() {
 			fmt.Println("Exit code:", exitError.ExitCode())
 			os.Exit(exitError.ExitCode())
 		}
-		fmt.Println("Err: %v", err)
+		fmt.Println("Err:", err)
 	}
 }
