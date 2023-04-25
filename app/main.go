@@ -33,6 +33,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := syscall.Unshare(syscall.CLONE_NEWPID); err != nil {
+		fmt.Printf("Failed to create new PID namespace: %s\n", err)
+		os.Exit(1)
+	}
+
 	cmd := exec.Command(command, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
