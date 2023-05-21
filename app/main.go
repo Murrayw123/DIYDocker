@@ -63,7 +63,7 @@ func main() {
 	}
 }
 
-// eg. /usr/lib/docker-explorerer -> chroot/usr/lib/docker-explorerer
+// eg. /usr/lib/docker-explorer -> chroot/usr/lib/docker-explorer
 func copyExecutableIntoDir(chrootDir string, executablePath string) error {
 	executablePathInChrootDir := path.Join(chrootDir, executablePath)
 
